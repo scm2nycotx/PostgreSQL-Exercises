@@ -1,0 +1,19 @@
+--The names of the restaurants that you gave a 5 stars to
+--The favorite dishes of all 5-star restaurants
+--The the id of a restaurant by a specific restaurant name, say 'Moon Tower'
+--restaurants in the category of 'BBQ'
+--restaurants that do take out
+--restaurants that do take out and is in the category of 'BBQ'
+--restaurants within 2 miles
+--restaurants you haven't ate at in the last week
+--restaurants you haven't ate at in the last week and has 5 stars
+
+--Aggregation and Sorting Queries
+--list restaurants by the closest distance.
+--list the top 2 restaurants by distance.
+--list the top 2 restaurants by stars.
+--list the top 2 restaurants by stars where the distance is less than 2 miles.
+--count the number of restaurants in the db.
+--count the number of restaurants by category.
+--get the average stars per restaurant by category.
+--get the max stars of a restaurant by category.
