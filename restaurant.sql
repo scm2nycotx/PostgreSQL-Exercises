@@ -8,9 +8,9 @@ CREATE TABLE restaurant (
   takeout BOOLEAN,
   last_visit DATE
   );
-INSERT INTO restaurant VALUES (DEFAULT, 'Moon Tower', 3, 3.2, 'American', 'Hamburger', FALSE, '2017-09-24'),
+INSERT INTO restaurant VALUES (DEFAULT, 'Moon Tower', 3, 5, 'BBQ', 'Hamburger', TRUE, '2017-09-24'),
 (DEFAULT, 'Lupe Tortilla', 5, 4.5, 'Mexican', 'Sizzling Beef Fajitas', FALSE, '2018-05-05'),
-(DEFAULT, 'Yia Yia Marys', 20, 4.6, 'Mediterranean', 'Jumbo Sea Scallops', FALSE, '2017-11-22'),
+(DEFAULT, 'Yia Yia Marys', 20, 5, 'Mediterranean', 'Jumbo Sea Scallops', FALSE, '2017-11-22'),
 (DEFAULT, 'Pappadeaux Seafood', 10, 4.4, 'American', 'Alaskan Halibut Piccata', TRUE, '2018-01-01'),
 (DEFAULT, 'Fogo de Chão', 15, 4, 'Brazilian', 'Steak', TRUE, '2018-02-02'),
 (DEFAULT, 'Regal Seafood House', 11.8, 4.1, 'Chinese', 'Seafood', FALSE, '2016-11-11'),
@@ -18,4 +18,6 @@ INSERT INTO restaurant VALUES (DEFAULT, 'Moon Tower', 3, 3.2, 'American', 'Hambu
 (DEFAULT, 'Yauatcha at Houston', 15, 3.8, 'Chinese', 'Dim Sum', TRUE, '2018-01-01'),
 (DEFAULT, 'Pappas Bar-B-Q', 12.3, 4.2, 'American', 'Bar-B-Q', FALSE, '2017-05-30'),
 (DEFAULT, 'Floyds Cajun Seafood', 4.8, 3.7, 'Cajun/Louisiana', 'Crawfish Etouffée', TRUE, '2018-02-21'),
-(DEFAULT, 'Mi Luna', 18, 4.1, 'Spanish', 'Pinchos De Camarones', FALSE, '2017-12-09')
+(DEFAULT, 'Mi Luna', 18, 4.1, 'Spanish', 'Pinchos De Camarones', FALSE, '2017-12-09'),
+(DEFAULT, 'Keepers', 3, 5, 'Japanese', 'Beef Fried Rice', TRUE, '2018-06-02'),
+(DEFAULT, 'Sugar Thai Fine Cuisine', 3, 4.1, 'Thai', 'Massamun Curry Beef', FALSE, '2016-07-02')
