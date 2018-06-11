@@ -60,3 +60,4 @@ INSERT INTO review VALUES (DEFAULT, '5 star food!', 'Dined in many times, and de
 (DEFAULT, 'Wonderful!', 'Teste is great and service is nice, highly recommend!', 4, 4, 5),
 (DEFAULT, 'Never come again!', 'Expensive and nothing special, poor servie', 1, 6, 10),
 (DEFAULT, 'No, No, No!', 'The worst food I have ever had!!', 0, 2, 8)
+
