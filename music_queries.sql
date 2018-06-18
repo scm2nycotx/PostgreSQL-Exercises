@@ -21,20 +21,32 @@ SELECT album.id AS album_id, album.title, SUM(track.duration) AS total_duration 
 -->SELECT track.album_id, MAX(track.total_duration) AS max_total_duration FROM (SELECT SUM(track.duration) AS total_duration FROM track GROUP BY album_id)
 -->ERROR: pq: subquery in FROM must have an alias
 --9. Who are the 5 most prolific artists based on the number of albums they have recorded?
-
+SELECT artist.name, COUNT(album.id) AS album_qty FROM album INNER JOIN artist ON album.artist_id = artist.id GROUP BY album.artist_id, artist.name ORDER BY album_qty DESC LIMIT 5
 --10. What are all the tracks a given artist has recorded?
-
+SELECT artist.name, track.id AS track_id, song.name AS song_name, album.title AS album_title, track.duration FROM album 
+INNER JOIN track ON track.album_id = album.id 
+INNER JOIN artist ON artist.id = album.artist_id 
+INNER JOIN song ON track.song_id = song.id WHERE artist.id = 5
 --11. What are the top 5 most often recorded songs?
-
+SELECT song.name, COUNT(song.id) AS song_frequency FROM song GROUP BY song.name ORDER BY song_frequency LIMIT 5
 --12. Who are the top 5 song writers whose songs have been most often recorded?
-
+SELECT song.song_writer_id, song_writer.name, COUNT(song.id) AS song_recorded_frequency FROM song INNER JOIN song_writer ON song.song_writer_id = song_writer.id GROUP BY song.song_writer_id, song_writer.name ORDER BY song_recorded_frequency LIMIT 5 
 --13. Who is the most prolific song writer based on the number of songs he has written?
-
+SELECT song.song_writer_id, song_writer.name, COUNT(song.id) AS song_recorded_frequency FROM song INNER JOIN song_writer ON song.song_writer_id = song_writer.id GROUP BY song.song_writer_id, song_writer.name ORDER BY song_recorded_frequency LIMIT 1 
 --14. What songs has a given artist recorded?
-
+SELECT artist.id AS artist_id, artist.name, song.name AS song_name FROM artist INNER JOIN album ON artist.id = album.artist_id INNER JOIN track ON album.id = track.album_id INNER JOIN song ON track.song_id = song.id WHERE artist.id = 2
 --15. Who are the song writers whose songs a given artist has recorded?
-
+SELECT artist.id AS artist_id, artist.name AS artist_name, song.name AS song_name, song_writer.name AS song_writer_name FROM artist 
+INNER JOIN album ON artist.id = album.artist_id 
+INNER JOIN track ON album.id = track.album_id 
+INNER JOIN song ON track.song_id = song.id
+INNER JOIN song_writer ON song.song_writer_id = song_writer.id WHERE artist.id = 3
 --16. Who are the artists who have recorded a given song writer's songs?
+SELECT song_writer.name AS song_writer_name, song.name AS song_name, artist.name AS artist_name FROM artist 
+INNER JOIN album ON artist.id = album.artist_id 
+INNER JOIN track ON album.id = track.album_id 
+INNER JOIN song ON track.song_id = song.id
+INNER JOIN song_writer ON song.song_writer_id = song_writer.id WHERE song_writer.id = 5
 
 --Bonus Challenge 1
 --Allow that an album may have multiple artists:
